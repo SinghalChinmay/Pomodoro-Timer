@@ -5,14 +5,14 @@ let audio = new Audio("../assets/alarm.wav");
 function btn1Disable() {
     btn1.disabled = true;
     btn2.disabled = false;
-    btn1.onmouseover = btn1.style.cssText = "cursor: not-allowed; box-shadow: none; background-color: none;";
+    btn1.onmouseover = btn1.style.cssText = "cursor: not-allowed;";
     btn2.onmouseover = btn2.style.cssText = "cursor: pointer";
 }
 
 function btn2Disable() {
     btn2.disabled = true;
     btn1.disabled = false;
-    btn2.onmouseover = btn2.style.cssText = "cursor: not-allowed; box-shadow: none; background-color: none;";
+    btn2.onmouseover = btn2.style.cssText = "cursor: not-allowed;";
     btn1.onmouseover = btn1.style.cssText = "cursor: pointer";
 }
 
