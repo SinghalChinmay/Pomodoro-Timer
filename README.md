@@ -4,17 +4,18 @@ This is a [**Pomodoro Timer**](https://en.wikipedia.org/wiki/Pomodoro_Technique)
 
 ## Built with:
 
-- HTML
+-   HTML
 
-- CSS
+-   CSS
 
-- JavaScript
+-   JavaScript
 
 ## References
 
-- Favicon/Logo Image - https://freepik.com
+-   Favicon/Logo Image - https://freepik.com
 
-- Alarm Sound - https://mixkit.co/
+-   Alarm Sound - https://mixkit.co/
 
 ## Author/Develoer
+
 Chinmay Singhal
