@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Ubuntu", sans-serif;
+    font-style: italic;
+    background-color: azure;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 250px;
+}
+
+header {
+    display: flex;
+    font-size: 45px;
+    justify-content: center;
+    background-color: bisque;
+    text-align: center;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.time-holder {
+    display: flex;
+    justify-content: center;
+    border: 5px solid rgb(255, 251, 0);
+    padding: 20px;
+    width: 200px;
+    font-size: 55px;
+    color: rgb(145, 129, 236);
+}
+
+.controls {
+    display: flex;
+    gap: 20px;
+}
+
+.buttons {
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    width: 70px;
+    height: 50px;
+}
+
+.buttons:hover,
+.buttons:active {
+    cursor: pointer;
+    transition-duration: 0.5s;
+    box-shadow: 0px 12px 12px rgb(231, 238, 222);
+}
+
+#btn1:hover,
+#btn1:active {
+    background-color: skyblue;
+    color: azure;
+}
+
+#btn2:hover,
+#btn2:active {
+    background-color: crimson;
+    color: azure;
+}
+
+#btn3:hover,
+#btn3:active {
+    background-color: lightgreen;
+    color: azure;
+}
+
+.footer {
+    text-align: center;
+    background-color: #ae98d8;
+    color: white;
+    padding: 20px;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-direction: column;
+    font-size: 20px;
+}
