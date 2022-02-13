@@ -18,7 +18,7 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    gap: 250px;
+    gap: 75px;
 }
 
 header {
@@ -34,7 +34,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 70px;
 }
 
 .time-holder {
@@ -88,6 +88,28 @@ header {
 #btn3:hover,
 #btn3:active {
     background-color: lightgreen;
+}
+
+.instructions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(177, 153, 153);
+    padding: 10px;
+    height: 200px;
+    width: 200px;
+    border-radius: 50px;
+}
+
+kbd {
+    font-size: 20px;
+}
+
+span {
+    font-style: normal;
+    font-size: 20px;
 }
 
 .footer {
