@@ -21,11 +21,11 @@ btn2Disable();
 function runTime() {
     if (stop === false) {
         time.innerHTML = `${parseInt(currentTime / 60)}:${(currentTime % 60)}`;
-        currentTime--;
-        if (currentTime === -1) {
-            audio.play();
+        if (currentTime === 0) audio.play();
+        if (currentTime !== 0) {
+            currentTime--;
+            setTimeout(runTime, 1000);
         }
-        if (currentTime !== -1) setTimeout(runTime, 1000);
     }
 }
 
