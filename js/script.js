@@ -41,6 +41,8 @@ function newTime() {
     btn2Disable();
 }
 
+// Event listeners
+
 btn1.onclick = () => {
     stop = false;
     btn1Disable();
@@ -49,3 +51,13 @@ btn1.onclick = () => {
 
 btn2.onclick = stopTime;
 btn3.onclick = newTime;
+
+window.addEventListener("keyup", event => {
+    if (event.key == "1" && btn1.disabled === false) {
+        stop = false;
+        btn1Disable();
+        runTime();
+    }
+    else if (event.key == "2" && btn2.disabled === false) stopTime();
+    else if (event.key == "3") newTime();
+})
