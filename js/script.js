@@ -1,6 +1,6 @@
-let currentTime = 1500;
+let currentTime = 1500; // Total seconds in 25 minutes
 let stop = false;
-let audio = new Audio("../assets/alarm.wav");
+let audio = new Audio("../assets/alarm.wav"); // alarm sound
 
 function btn1Disable() {
     btn1.disabled = true;
@@ -20,11 +20,11 @@ btn2Disable();
 
 function runTime() {
     if (stop === false) {
-        time.innerHTML = `${parseInt(currentTime / 60)}:${(currentTime % 60)}`;
+        time.innerHTML = `${parseInt(currentTime / 60)}:${(currentTime % 60)}`; // Changes the time continously
         if (currentTime === 0) audio.play();
         if (currentTime !== 0) {
             currentTime--;
-            setTimeout(runTime, 1000);
+            setTimeout(runTime, 1000); // Calls this function again, to update the time.
         }
     }
 }
