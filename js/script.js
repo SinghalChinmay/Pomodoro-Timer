@@ -20,7 +20,7 @@ btn2Disable();
 
 function runTime() {
     if (stop === false) {
-        time.innerHTML = `${parseInt(currentTime / 60)}:${(currentTime % 60)}`; // Changes the time continously
+        time.innerHTML = `${parseInt(currentTime / 60)}:${(currentTime % 60)}`; // Changes the time continuously
         if (currentTime === 0) audio.play();
         if (currentTime !== 0) {
             currentTime--;

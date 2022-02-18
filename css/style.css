@@ -50,7 +50,7 @@ header {
 .controls {
     display: flex;
     gap: 20px;
-    background-color:lightsalmon;
+    background-color: lightsalmon;
     border-radius: 10px;
     width: 300px;
     height: 100px;
