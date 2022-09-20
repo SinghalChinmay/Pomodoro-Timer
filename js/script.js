@@ -1,5 +1,5 @@
 let currentTime = 1500; // Total seconds in 25 minutes
-let stop = false;
+let stopper = false;
 let audio = new Audio("../assets/alarm.wav"); // alarm sound
 
 function btn1Disable() {
@@ -25,11 +25,11 @@ function btn2Enable() {
 btn2Disable();
 
 function runTime() {
-    if (stop === false) {
+    if (stopper === false) {
         time.innerHTML = `${parseInt(currentTime / 60)}:${(currentTime % 60)}`; // Changes the time continuously
-        if (currentTime === 0) { 
+        if (currentTime === 0) {
             btn2Disable();
-            audio.play(); 
+            audio.play();
         }
         if (currentTime !== 0) {
             currentTime--;
@@ -39,7 +39,7 @@ function runTime() {
 }
 
 function stopTime() {
-    stop = true;
+    stopper = true;
     btn2Disable();
     btn1Enable();
 }
@@ -47,7 +47,7 @@ function stopTime() {
 function newTime() {
     currentTime = 1500;
     time.innerHTML = "25:00";
-    stop = true;
+    stopper = true;
     btn2Disable();
     btn1Enable();
 }
@@ -55,7 +55,7 @@ function newTime() {
 // Event listeners
 
 btn1.onclick = () => {
-    stop = false;
+    stopper = false;
     btn1Disable();
     btn2Enable();
     runTime();
@@ -65,12 +65,12 @@ btn2.onclick = stopTime;
 btn3.onclick = newTime;
 
 window.addEventListener("keyup", event => {
-    if (event.key == "1" && btn1.disabled === false) {
-        stop = false;
+    if (event.key == "a" && btn1.disabled === false) {
+        stopper = false;
         btn1Disable();
         btn2Enable();
         runTime();
     }
-    else if (event.key == "2" && btn2.disabled === false) stopTime();
-    else if (event.key == "3") newTime();
+    else if (event.key == "b" && btn2.disabled === false) stopTime();
+    else if (event.key == "c") newTime();
 })
