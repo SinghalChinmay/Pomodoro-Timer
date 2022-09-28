@@ -2,14 +2,6 @@
 
 This is a [**Pomodoro Timer**](https://en.wikipedia.org/wiki/Pomodoro_Technique) project.
 
-## Built with:
-
--   HTML
-
--   CSS
-
--   JavaScript
-
 ## References
 
 -   Favicon/Logo Image - https://freepik.com
@@ -19,7 +11,6 @@ This is a [**Pomodoro Timer**](https://en.wikipedia.org/wiki/Pomodoro_Technique)
 ## Author/Develoer
 
 Chinmay Singhal
-
 
 ### Note
 _The audio may not play in the deployed website to github pages. But if you clone the website and run in locally, then it will work fine!_
