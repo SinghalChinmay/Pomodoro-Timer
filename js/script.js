@@ -4,43 +4,38 @@ let audio = new Audio("../assets/alarm.wav"); // alarm sound
 
 function btn1Disable() {
     btn1.disabled = true;
+    btn2.disabled = false;
     btn1.onmouseover = btn1.style.cssText = "cursor: not-allowed;";
+    btn2.onmouseover = btn2.style.cssText = "cursor: pointer";
 }
 
 function btn1Enable() {
     btn1.disabled = false;
-    btn1.onmouseover = btn1.style.cssText = "cursor: pointer";
-}
-
-function btn2Disable() {
     btn2.disabled = true;
+    btn1.onmouseover = btn1.style.cssText = "cursor: pointer";
     btn2.onmouseover = btn2.style.cssText = "cursor: not-allowed;";
 }
 
-function btn2Enable() {
-    btn2.disabled = false;
-    btn2.onmouseover = btn2.style.cssText = "cursor: pointer";
-}
-
-btn2Disable();
+btn1Enable();
 
 function runTime() {
     if (stopper === false) {
         time.innerHTML = `${parseInt(currentTime / 60)}:${(currentTime % 60)}`; // Changes the time continuously
-        if (currentTime === 0) {
-            btn2Disable();
-            audio.play();
-        }
         if (currentTime !== 0) {
             currentTime--;
             setTimeout(runTime, 1000); // Calls this function again, to update the time.
+        }
+        else {
+            btn1.disabled = btn2.disabled = true;
+            btn2.onmouseover = btn2.style.cssText = "cursor: not-allowed;";
+            btn1.onmouseover = btn1.style.cssText = "cursor: not-allowed";
+            audio.play();
         }
     }
 }
 
 function stopTime() {
     stopper = true;
-    btn2Disable();
     btn1Enable();
 }
 
@@ -48,7 +43,6 @@ function newTime() {
     currentTime = 1500;
     time.innerHTML = "25:00";
     stopper = true;
-    btn2Disable();
     btn1Enable();
 }
 
@@ -57,7 +51,6 @@ function newTime() {
 btn1.onclick = () => {
     stopper = false;
     btn1Disable();
-    btn2Enable();
     runTime();
 };
 
@@ -68,7 +61,6 @@ window.addEventListener("keyup", event => {
     if (event.key == "a" && btn1.disabled === false) {
         stopper = false;
         btn1Disable();
-        btn2Enable();
         runTime();
     }
     else if (event.key == "b" && btn2.disabled === false) stopTime();
