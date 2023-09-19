@@ -1,5 +1,5 @@
 let currentTime = 1500; // Total seconds in 25 minutes
-let stopper = false;
+let intervalID;
 let audio = new Audio("../assets/alarm.wav"); // alarm sound
 
 function btn1Disable() {
@@ -19,11 +19,10 @@ function btn1Enable() {
 btn1Enable();
 
 function runTime() {
-    if (stopper === false) {
+    intervalID = setInterval(() => {
         time.innerHTML = `${parseInt(currentTime / 60)}:${(currentTime % 60)}`; // Changes the time continuously
         if (currentTime !== 0) {
             currentTime--;
-            setTimeout(runTime, 1000); // Calls this function again, to update the time.
         }
         else {
             btn1.disabled = btn2.disabled = true;
@@ -31,25 +30,24 @@ function runTime() {
             btn1.onmouseover = btn1.style.cssText = "cursor: not-allowed";
             audio.play();
         }
-    }
+    }, 1000)
 }
 
 function stopTime() {
-    stopper = true;
+    clearInterval(intervalID);
     btn1Enable();
 }
 
 function newTime() {
+    clearInterval(intervalID);
     currentTime = 1500;
     time.innerHTML = "25:00";
-    stopper = true;
     btn1Enable();
 }
 
 // Event listeners
 
 btn1.onclick = () => {
-    stopper = false;
     btn1Disable();
     runTime();
 };
@@ -59,7 +57,6 @@ btn3.onclick = newTime;
 
 window.addEventListener("keyup", event => {
     if (event.key == "a" && btn1.disabled === false) {
-        stopper = false;
         btn1Disable();
         runTime();
     }
